@@ -163,10 +163,12 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " run the Bash script by pressing F6 without leaving VIM.
 map <f6> :w <CR>:!bash % <CR>
+
+vnoremap // y/<C-R>"<CR>
  
 "------------------------------------------------------------
 
 " Auto commands
-au BufNewFile,BufRead *.v,*.verilog,*.sv,*.systemverilog set ft=systemverilog
-au FileType systemverilog set shiftwidth=2| set tabstop=2| set softtabstop=2| set expandtab
-au FileType cpp           set shiftwidth=4| set tabstop=4| set softtabstop=4| set expandtab
+au BufNewFile,BufRead *.v,*.verilog,*.sv,*.systemverilog set ft=verilog_systemverilog
+au FileType verilog_systemverilog set shiftwidth=2| set tabstop=2| set softtabstop=2| set expandtab
+au FileType cpp                   set shiftwidth=4| set tabstop=4| set softtabstop=4| set expandtab

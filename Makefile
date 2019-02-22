@@ -1,14 +1,16 @@
 # This must be the first line
-PATH := $(dir $(realpath $(lastword $(MAKEFILE_LIST)))) 
+DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+$(warning $(DIR))
 
-$(DOTS) := .bashrc .vimrc .gvimrc .gitconfig
+DOTS := .bashrc .vimrc .gvimrc .gitconfig
+$(warning $(DOTS))
 
 copy:
 	mkdir -p ~/dotsbkp
-	cp ~/$(DOTS) ~/dotsbkp
-	cp $(PATH)/$(DOTS) ~/
+	cp $(foreach dot, $(DOTS), ~/$(dot)) ~/dotsbkp
+	cp $(foreach dot, $(DOTS), $(DIR)/$(dot)) ~/
 
 sync:
-	mkdir -p $(PATH)/dotsbkp
-	cp $(PATHS)/$(DOTS) $(PATH)/dotsbkp
-	cp ~/$(DOTS) $(PATH)
+	mkdir -p $(DIR)/dotsbkp
+	cp $(foreach dot, $(DOTS), $(DIR)/$(dot)) $(DIR)/dotsbkp
+	cp $(foreach dot, $(DOTS), ~/$(dot)) $(DIR)

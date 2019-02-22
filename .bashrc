@@ -96,6 +96,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias ssh_agent='eval `ssh-agent`'
+alias ssh_add='ssh-add ~/.ssh/id_rsa'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -116,10 +119,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export QSYS_ROOTDIR="/home/vb000/altera/15.0/quartus/sopc_builder/bin"
-export ALTERAOCLSDKROOT="/home/vb000/altera/15.0/hld"
-export PATH=${PATH}:/home/vb000/altera/15.0/quartus/bin/
-export PATH=${PATH}:/home/vb000/altera/15.1/modelsim_ase/bin/
-
-export RISCV="/home/vb000/.repos/riscv/riscv"
-export PATH=$PATH:$RISCV/bin
+# key bindings
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '";2C": end-of-line'
+bind '";2D": beginning-of-line'

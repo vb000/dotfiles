@@ -1,6 +1,4 @@
-# dotfiles
-
-Setting up a development machine.
+# Setting up a development machine.
 
 ### Generate an SSH key
     ssh-keygen -t ed25519 -C "<email>"

@@ -1,3 +1,7 @@
 [user]
 	name = Bandhav Veluri
 	email = bandhav.veluri00@gmail.com
+[core]
+	editor = vim
+[pull]
+	rebase = false

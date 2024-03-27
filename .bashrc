@@ -119,6 +119,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export SQUEUE_FORMAT="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
+
 # key bindings
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
